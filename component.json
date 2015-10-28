@@ -1,0 +1,6 @@
+{
+    "repos": "https://github.com/huya-fed/performance-report.git",
+    "version": "v1.0.0",
+    "name": "performance-report",
+    "main": "performance-report.js"
+}
