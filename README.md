@@ -34,5 +34,5 @@
 ##使用方式：
 	
 	//JS里面直接引用就ok
-	require('performance-report');
+	require('performance-report')('xx产品名称');
 
