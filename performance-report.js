@@ -15,11 +15,16 @@ var performanceReport = function(productName) {
         var loadEventTime = timing.loadEventEnd - timing.loadEventStart;
         var productName = productName+'核心指标';
         if(window.ga){
-            ga('send', 'timing', {'timingCategory': productName,'timingVar': '网络时间','timingValue': netWorkTime});
-            ga('send', 'timing', {'timingCategory': productName,'timingVar': '白屏时间(请求完毕到DOM加载完成)','timingValue': initDomTreeTime});
-            ga('send', 'timing', {'timingCategory': productName,'timingVar': '可操作时间(解释dom树耗时)','timingValue': domReadyTime});
-            ga('send', 'timing', {'timingCategory': productName,'timingVar': 'load事件的耗时','timingValue': loadEventTime});
-            ga('send', 'timing', {'timingCategory': productName,'timingVar': '总下载时间','timingValue': loadTime});
+            $.getScript('http://ipip.yy.com/get_ip_info.php',function(){
+                if(typeof returnInfo!=='undefined'){
+                    ga('set', 'dimension4', returnInfo.isp);
+                }
+                ga('send', 'timing', {'timingCategory': '核心指标','timingVar': '网络时间','timingValue': netWorkTime});
+                ga('send', 'timing', {'timingCategory': '核心指标','timingVar': '白屏时间(请求完毕到DOM加载完成)','timingValue': initDomTreeTime});
+                ga('send', 'timing', {'timingCategory': '核心指标','timingVar': '可操作时间(解释dom树耗时)','timingValue': domReadyTime});
+                ga('send', 'timing', {'timingCategory': '核心指标','timingVar': 'load事件的耗时','timingValue': loadEventTime});
+                ga('send', 'timing', {'timingCategory': '核心指标','timingVar': '总下载时间','timingValue': loadTime});
+            })
         }
     }
 }

@@ -1,7 +1,7 @@
 性能上报模块
 =========
 
-> 简介：依赖于ga的上报统计
+> 简介：依赖于ga的上报统计,和jq
 
 
 
@@ -14,7 +14,7 @@
 	//白屏时间(请求完毕到DOM加载完成):
 	performance.timing.domInteractive - performance.timing.responseEnd
 
-	//可操作时间(解释dom树耗时):
+	//可操作时间(解释dom树耗时)【原因】反省下你的 DOM 树嵌套是不是太多了！,会受到资源影响的，像图片这些，可以限速看看:
 	performance.timing.domComplete - performance.timing.domInteractive
 
 	//load事件的耗时:
