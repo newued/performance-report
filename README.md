@@ -19,7 +19,7 @@
 	performance.timing.domComplete - performance.timing.domInteractive
 
 	//load事件的耗时:
-	performance.timing.loadEventEnd - performance.timing.loadEventStart 
+	//performance.timing.loadEventEnd - performance.timing.loadEventStart 
 
 	//总下载时间:
 	performance.timing.loadEventEnd - performance.timing.navigationStart  
